@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pj.project4sp.admin.VolunteerMapper">
+    <resultMap id="VolModel" type="com.pj.project4sp.admin.VolunteerPO">
+        <result property="id" column="id"></result>
+        <result property="name" column="name"></result>
+        <result property="province" column="province"></result>
+        <result property="is985" column="is_985"></result>
+        <result property="is211" column="is_211"></result>
+        <result property="lowestScore" column="lowest_score"></result>
+        <result property="major" column="professional_name"></result>
+    </resultMap>
+
+    <select id="condQueryVol" resultMap="VolModel">
+        SELECT id, `name`, province, is_985, is_211, lowest_score, professional_name
+        FROM tb_volunteer
+        <where>
+            <if test="is985 != null">
+                and is_985 = #{is985}
+            </if>
+            <if test="is211 != null">
+                and is_211 = #{is211}
+            </if>
+            <if test="major != null">
+                and professional_name like #{major}
+            </if>
+        </where>
+    </select>
+</mapper>

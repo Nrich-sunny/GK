@@ -2,7 +2,9 @@ package com.pj.project4sp.admin;
 
 import java.util.List;
 
+import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,9 +29,20 @@ public class SpAdminController {
 	
 	@Autowired
 	SpAdminService spAdminService;
-	
+
+	@Autowired
+	VolunteerService volunteerService;
+
 	@Autowired
 	SpAdminPasswordService spAdminPasswordService;
+
+	@RequestMapping("condQuery")
+	AjaxJson test(SpAdmin admin, VolQueryCond volQueryCond) {
+		StpUtil.checkPermission(AuthConst.ADMIN_LIST);
+		List<VolunteerPO> volunteers = volunteerService.condQuery(volQueryCond);
+		return AjaxJson.getSuccessData(volunteers);
+	}
+
 
 	/** 增  */
 	@RequestMapping("add")

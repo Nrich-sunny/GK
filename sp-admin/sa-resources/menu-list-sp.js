@@ -38,6 +38,13 @@ window.menuList.unshift(
 			// {id: 'apilog-list', name: '请求日志监控', url: 'sa-html-sp/sp-apilog/api-log-list.html', info: '记录本系统所有的api请求'},
 		]
 	},
+	{//添加的菜单
+		id: 'temperature',
+		name: '志愿填报',
+		icon: 'el-icon-view',
+		info: '',
+		url: 'sa-html-sp/volunteer/volunteer.html',
+	},
 	{
 		id: 'sp-cfg', 
 		name: '系统配置', 
