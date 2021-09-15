@@ -5,6 +5,15 @@ public class VolQueryCond {
     private Integer is211;
     private String major;
     private String province;
+    private Integer lowestScore;
+
+    public Integer getLowestScore() {
+        return lowestScore;
+    }
+
+    public void setLowestScore(Integer lowestScore) {
+        this.lowestScore = lowestScore;
+    }
 
     public String getProvince() {
         return province;

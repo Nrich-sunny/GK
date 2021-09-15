@@ -33,7 +33,7 @@ window.menuList.unshift(
 		childList: [
 			{id: 'role-list', name: '角色列表', url: 'sa-html-sp/sp-role/role-list.html', info: '管理系统各种角色'},
 			{id: 'menu-list', name: '菜单列表', url: 'sa-html-sp/sp-role/menu-list.html', info: '所有菜单项预览'},
-			{id: 'admin-list', name: '管理员列表', url: 'sa-html-sp/sp-admin/admin-list.html', info: '所有管理员账号'},
+			{id: 'admin-list', name: '人员列表', url: 'sa-html-sp/sp-admin/admin-list.html', info: '所有管理员账号'},
 			{id: 'admin-add', name: '管理员添加', url: 'sa-html-sp/sp-admin/admin-add.html', info: '添加一个管理员'},
 			// {id: 'apilog-list', name: '请求日志监控', url: 'sa-html-sp/sp-apilog/api-log-list.html', info: '记录本系统所有的api请求'},
 		]

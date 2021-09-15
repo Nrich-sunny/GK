@@ -12,8 +12,12 @@ public class VolunteerService {
     VolunteerMapper volunteerMapper;
 
     public List<VolunteerPO> condQuery(VolQueryCond cond) {
-        String majorLike = "%" + cond.getMajor() + "%";
-        cond.setMajor(majorLike);
+        if (cond.getMajor() != null)
+            cond.setMajor("%" + cond.getMajor() + "%");
+
+        if (cond.getProvince() != null)
+            cond.setProvince("%" + cond.getProvince() + "%");
+
         return volunteerMapper.condQueryVol(cond);
     }
 }

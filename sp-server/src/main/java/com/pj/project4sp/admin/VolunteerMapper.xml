@@ -25,6 +25,9 @@
             <if test="major != null">
                 and professional_name like #{major}
             </if>
+            <if test="province != null">
+                and province like #{province}
+            </if>
         </where>
     </select>
 </mapper>
